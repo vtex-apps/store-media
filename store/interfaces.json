@@ -1,0 +1,8 @@
+{
+  "media": {
+    "component": "Media",
+    "content": {
+      "$ref": "app:vtex.store-media#/definitions/Media"
+    }
+  }
+}

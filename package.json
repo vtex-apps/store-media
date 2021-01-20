@@ -1,6 +1,6 @@
 {
   "version": "0.0.0",
-  "name": "CHANGE_ME",
+  "name": "store-media",
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
@@ -23,7 +23,7 @@
       "eslint --fix",
       "prettier --write"
     ],
-    "*.json": [
+    "*.{json,graphql,gql}": [
       "prettier --write"
     ]
   },

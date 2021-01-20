@@ -1,4 +1,7 @@
 {
-  "admin/test": "teste",
-  "store/test": "teste"
+  "admin/editor.media.title": "Mídia",
+  "admin/editor.media.description": "Bloco de mídia que suporta imagens e vídeos",
+  "admin/editor.media.mediaType.title": "Tipo de mídia",
+  "admin/editor.media.mediaType.image": "Imagem",
+  "admin/editor.media.mediaType.video": "Vídeo"
 }
