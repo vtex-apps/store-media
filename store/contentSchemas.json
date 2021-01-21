@@ -11,8 +11,7 @@
           "enumNames": [
             "admin/editor.media.mediaType.image",
             "admin/editor.media.mediaType.video"
-          ],
-          "default": "image"
+          ]
         }
       },
       "dependencies": {
@@ -23,7 +22,7 @@
                 "mediaType": {
                   "enum": ["image"]
                 },
-                "imageUrl": {
+                "src": {
                   "$ref": "app:vtex.store-image#/definitions/Image/properties/src"
                 },
                 "link": {

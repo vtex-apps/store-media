@@ -78,7 +78,7 @@ describe('Using media block via site-editor', () => {
     const altText = 'vtex-image'
 
     const { queryByAltText } = render(
-      <MediaSiteEditor mediaType="image" imageUrl="vtex.png" alt={altText} />
+      <MediaSiteEditor mediaType="image" src="vtex.png" alt={altText} />
     )
 
     expect(queryByAltText(altText)).toBeInTheDocument()
@@ -87,32 +87,14 @@ describe('Using media block via site-editor', () => {
 
   it('should render a image even if imageUrl is malformed', () => {
     const altText = 'vtex-image'
-    const imageUrl = 'vtex.png'
+    const src = 'vtex.png'
 
     const { queryByAltText } = render(
-      <MediaSiteEditor mediaType="image" imageUrl={imageUrl} alt={altText} />
+      <MediaSiteEditor mediaType="image" src={src} alt={altText} />
     )
 
     expect(queryByAltText(altText)).toBeInTheDocument()
-    expect(queryByAltText(altText)).toHaveAttribute('src', imageUrl)
-  })
-
-  it('should render a image using imageUrl even if src is set', () => {
-    const altText = 'vtex-image'
-    const imageUrl = 'vtex-image-url.png'
-    const src = 'vtex-src.png'
-
-    const { queryByAltText } = render(
-      <MediaSiteEditor
-        mediaType="image"
-        imageUrl={imageUrl}
-        src={src}
-        alt={altText}
-      />
-    )
-
-    expect(queryByAltText(altText)).toBeInTheDocument()
-    expect(queryByAltText(altText)).toHaveAttribute('src', imageUrl)
+    expect(queryByAltText(altText)).toHaveAttribute('src', src)
   })
 })
 

@@ -18,7 +18,6 @@ export interface ImageModeProps extends ImageProps {
 // on the test site-editor tests
 export interface BlockModeProps {
   videoUrl?: VideoTypes.VideoPlayer['src']
-  imageUrl?: ImageProps['src']
 }
 
 export type MediaProps = ImageModeProps | VideoModeProps

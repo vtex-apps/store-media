@@ -61,16 +61,10 @@ function isVideoSrc(src?: string) {
 type GetMediaValuesParams = {
   rawSrc?: ImageModeProps['src'] | VideoModeProps['src']
   mediaType: 'image' | 'video' | 'imageAndVideo'
-  imageUrl?: BlockModeProps['imageUrl']
   videoUrl?: BlockModeProps['videoUrl']
 }
 
-function getMediaValues({
-  rawSrc,
-  mediaType,
-  imageUrl,
-  videoUrl,
-}: GetMediaValuesParams) {
+function getMediaValues({ rawSrc, mediaType, videoUrl }: GetMediaValuesParams) {
   if (
     mediaType === 'video' ||
     (mediaType === 'imageAndVideo' && (videoUrl || isVideoSrc(rawSrc)))
@@ -78,7 +72,7 @@ function getMediaValues({
     return { isImage: false, src: videoUrl ?? rawSrc }
   }
 
-  return { isImage: true, src: imageUrl ?? rawSrc }
+  return { isImage: true, src: rawSrc }
 }
 
 function getModifiableHandles(handles: CssHandlesTypes.CssHandles<string[]>) {
@@ -122,12 +116,11 @@ function Media(props: MediaProps) {
    * This props are the ones used by the schema to receive the source of the image/video.
    * Since they have different names, they don't conflict.
    */
-  const { imageUrl, videoUrl } = props as BlockModeProps
+  const { videoUrl } = props as BlockModeProps
 
   const { isImage, src } = getMediaValues({
     rawSrc,
     mediaType,
-    imageUrl,
     videoUrl,
   })
 
