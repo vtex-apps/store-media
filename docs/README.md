@@ -28,8 +28,6 @@ The Media app allows you to display image and video assets using a single block.
 "media#mobile-phone": {
   "props": {
     "src": "https://storecomponents.vteximg.com.br/arquivos/mobile-phone.png",
-    "maxHeight": "",
-    "maxWidth": "",
     "blockClass": "storePrint"
   }
 }
@@ -37,13 +35,13 @@ The Media app allows you to display image and video assets using a single block.
 
 ### `media` props
 
-The `media` block inherits all props from `image` and `video` blocks. It's highly recommended for you to checkout the docs for the [Image](https://github.com/vtex-apps/store-image) and [Video](https://github.com/vtex-apps/store-video) blocks before using this block.
+The `media` block inherits all props from `image` and `video` blocks. It's highly recommended for you to check out the docs for [Image](https://github.com/vtex-apps/store-image) and [Video](https://github.com/vtex-apps/store-video) blocks before using this block.
 
-You can use props from both blocks, but `media` will only consider the props from the block (`image` or `video`) that matches the current `mediaType`, or, in the case of `mediaType` being `imageAndVideo`, that matches the type of the `src`.
+You can use props from both blocks, but `media` will only consider the props from the block (`image` or `video`) that matches the current `mediaType`, or, in the case of `mediaType` being `imageOrVideo`, that matches the type of the `src`.
 
-| Prop name   | Type | Description                                                                                                                                                                                                                                                                                                                           | Default value   |
-| ----------- | ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------- |
-| `mediaType` | enum | Type of the media to be displayed. Possible values are: `image` (behaves as an image block no matter the `src`), `video` (behaves as an video block no matter the `src`), and `imageAndVideo`. Choosing `imageAndVideo` will make `media` automatically identify the type of the `src` based on its extension and behave accordingly. | `imageAndVideo` |
+| Prop name   | Type | Description                                                                                                                                                                                                                                                                                                                         | Default value  |
+| ----------- | ---- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------- |
+| `mediaType` | enum | Type of the media to be displayed. Possible values are: `image` (behaves as an image block no matter the `src`), `video` (behaves as an video block no matter the `src`), and `imageOrVideo`. Choosing `imageOrVideo` will make `media` automatically identify the type of the `src` based on its extension and behave accordingly. | `imageOrVideo` |
 
 Use the **admin's Site Editor** to manage some props declared in the `media` block. Using the Site Editor to provide the image or video `src` will force you to choose between `image` and `video`.
 
@@ -51,9 +49,9 @@ Use the **admin's Site Editor** to manage some props declared in the `media` blo
 
 In order to apply CSS customizations in this and other blocks, follow the instructions given in the recipe on [Using CSS Handles for store customization](https://vtex.io/docs/recipes/style/using-css-handles-for-store-customization).
 
-Just like it does with props, the `media` block inherits all of `image` and `video` blocks' CSS Handles, which you can checkout at their docs.
+Just like it does with props, the `media` block inherits all of `image` and `video` blocks' CSS Handles. You can find them in their respective docs.
 
-Keep in mind that, for instance, that applying CSS customizations to CSS Handles that came from `image` won't make any effect if the `mediaType` is set to `video` or if the `mediaType` is set to `imageAndVideo` but the `src` was identified as a video.
+Keep in mind that, for instance, applying CSS customizations to CSS Handles that came from `image` won't have any effect if the `mediaType` is set to `video` or if the `mediaType` is set to `imageOrVideo` and the `src` was identified as a video.
 
 <!-- DOCS-IGNORE:start -->
 

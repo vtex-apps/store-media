@@ -5,12 +5,12 @@ import type { VideoTypes } from 'vtex.store-video'
 export type ImageProps = ComponentProps<typeof Image>
 
 export interface VideoModeProps extends Omit<VideoTypes.VideoPlayer, 'src'> {
-  mediaType?: 'video' | 'imageAndVideo'
+  mediaType?: 'video' | 'imageOrVideo'
   src?: VideoTypes.VideoPlayer['src']
 }
 
 export interface ImageModeProps extends ImageProps {
-  mediaType?: 'image' | 'imageAndVideo'
+  mediaType?: 'image' | 'imageOrVideo'
 }
 
 // Media type will always be defined (image or video), but assuring that here

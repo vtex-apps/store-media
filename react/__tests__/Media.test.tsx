@@ -74,7 +74,7 @@ describe('Using media block via site-editor', () => {
     expect(queryByTestId('youtube-player')).not.toBeInTheDocument()
   })
 
-  it('should render a image correctly', () => {
+  it('should render an image correctly', () => {
     const altText = 'vtex-image'
 
     const { queryByAltText } = render(
@@ -85,7 +85,7 @@ describe('Using media block via site-editor', () => {
     expect(queryByAltText(altText)).toHaveAttribute('src', 'vtex.png')
   })
 
-  it('should render a image even if imageUrl is malformed', () => {
+  it('should render an image even if imageUrl is malformed', () => {
     const altText = 'vtex-image'
     const src = 'vtex.png'
 
@@ -141,7 +141,7 @@ describe('Using media with fixed mediaType', () => {
     expect(queryByTestId('youtube-player')).not.toBeInTheDocument()
   })
 
-  it('should render a image correctly', () => {
+  it('should render a nimage correctly', () => {
     const altText = 'vtex-image'
     const src = 'vtex.png'
 
@@ -153,7 +153,7 @@ describe('Using media with fixed mediaType', () => {
     expect(queryByAltText(altText)).toHaveAttribute('src', src)
   })
 
-  it('should render a image even if src is malformed', () => {
+  it('should render an image even if src is malformed', () => {
     const altText = 'vtex-image'
     const src = 'vtex'
 
@@ -165,7 +165,7 @@ describe('Using media with fixed mediaType', () => {
     expect(queryByAltText(altText)).toHaveAttribute('src', src)
   })
 
-  it('should render a image if mediaType is set to image, even if src has mp4 extension', () => {
+  it('should render an image if mediaType is set to image, even if src has mp4 extension', () => {
     const altText = 'vtex-image'
 
     const { queryByAltText } = render(
@@ -180,11 +180,11 @@ describe('Using media with fixed mediaType', () => {
   })
 })
 
-describe('Using media with imageAndVideo mediaType', () => {
+describe('Using media with imageOrVideo mediaType', () => {
   it('should render a youtube player correctly', () => {
     const { queryByTestId } = render(
       <Media
-        mediaType="imageAndVideo"
+        mediaType="imageOrVideo"
         src="https://www.youtube.com/watch?v=hT0OMD11b0A"
       />
     )
@@ -196,7 +196,7 @@ describe('Using media with imageAndVideo mediaType', () => {
 
   it('should render a vimeo player correctly', () => {
     const { queryByTestId } = render(
-      <Media mediaType="imageAndVideo" src="https://vimeo.com/89404519" />
+      <Media mediaType="imageOrVideo" src="https://vimeo.com/89404519" />
     )
 
     expect(queryByTestId('html5-player')).not.toBeInTheDocument()
@@ -206,7 +206,7 @@ describe('Using media with imageAndVideo mediaType', () => {
 
   it('should render a HTML5 player correctly', () => {
     const { queryByTestId } = render(
-      <Media mediaType="imageAndVideo" src="http://vtex.com/video.mp4" />
+      <Media mediaType="imageOrVideo" src="http://vtex.com/video.mp4" />
     )
 
     expect(queryByTestId('html5-player')).toBeInTheDocument()
@@ -216,7 +216,7 @@ describe('Using media with imageAndVideo mediaType', () => {
 
   it('should render a HTML5 player correctly even if src has name "png" on it', () => {
     const { queryByTestId } = render(
-      <Media mediaType="imageAndVideo" src="http://vtex.com/vtex-png.mp4" />
+      <Media mediaType="imageOrVideo" src="http://vtex.com/vtex-png.mp4" />
     )
 
     expect(queryByTestId('html5-player')).toBeInTheDocument()
@@ -227,7 +227,7 @@ describe('Using media with imageAndVideo mediaType', () => {
   it('should render a HTML5 player correctly even if src has query params', () => {
     const { queryByTestId } = render(
       <Media
-        mediaType="imageAndVideo"
+        mediaType="imageOrVideo"
         src="http://vtex.com/vtex-png.mp4?one=1&two=2&three=3"
       />
     )
@@ -237,36 +237,36 @@ describe('Using media with imageAndVideo mediaType', () => {
     expect(queryByTestId('youtube-player')).not.toBeInTheDocument()
   })
 
-  it('should render a image correctly', () => {
+  it('should render an image correctly', () => {
     const altText = 'vtex-image'
     const src = 'vtex.png'
 
     const { queryByAltText } = render(
-      <Media mediaType="imageAndVideo" src={src} alt={altText} />
+      <Media mediaType="imageOrVideo" src={src} alt={altText} />
     )
 
     expect(queryByAltText(altText)).toBeInTheDocument()
     expect(queryByAltText(altText)).toHaveAttribute('src', src)
   })
 
-  it('should render a image if src is malformed', () => {
+  it('should render an image if src is malformed', () => {
     const altText = 'vtex-image'
     const src = 'vtex'
 
     const { queryByAltText } = render(
-      <Media mediaType="imageAndVideo" src={src} alt={altText} />
+      <Media mediaType="imageOrVideo" src={src} alt={altText} />
     )
 
     expect(queryByAltText(altText)).toBeInTheDocument()
     expect(queryByAltText(altText)).toHaveAttribute('src', src)
   })
 
-  it('should render a image correctly even if src has "mp4", "youtube" or "vimeo" on it', () => {
+  it('should render an image correctly even if src has "mp4", "youtube" or "vimeo" on it', () => {
     const altText = 'vtex-image'
 
     const { queryByAltText } = render(
       <Media
-        mediaType="imageAndVideo"
+        mediaType="imageOrVideo"
         src="vtex-youtube-vimeo-mp4.png"
         alt={altText}
       />
@@ -275,12 +275,12 @@ describe('Using media with imageAndVideo mediaType', () => {
     expect(queryByAltText(altText)).toBeInTheDocument()
   })
 
-  it('should render a image correctly even if src has query params', () => {
+  it('should render an image correctly even if src has query params', () => {
     const altText = 'vtex-image'
 
     const { queryByAltText } = render(
       <Media
-        mediaType="imageAndVideo"
+        mediaType="imageOrVideo"
         src="vtex-mp4.png?one=1&two=2&three=3"
         alt={altText}
       />
@@ -289,12 +289,12 @@ describe('Using media with imageAndVideo mediaType', () => {
     expect(queryByAltText(altText)).toBeInTheDocument()
   })
 
-  it('should render a image correctly even if src has no extension', () => {
+  it('should render an image correctly even if src has no extension', () => {
     const altText = 'vtex-image'
 
     const { queryByAltText } = render(
       <Media
-        mediaType="imageAndVideo"
+        mediaType="imageOrVideo"
         src="http://vtex.com/vtex-image-mp4"
         alt={altText}
       />
@@ -303,11 +303,11 @@ describe('Using media with imageAndVideo mediaType', () => {
     expect(queryByAltText(altText)).toBeInTheDocument()
   })
 
-  it('should render a image if src is not set', () => {
+  it('should render an image if src is not set', () => {
     const altText = 'vtex-image'
 
     const { queryByAltText } = render(
-      <Media mediaType="imageAndVideo" alt={altText} />
+      <Media mediaType="imageOrVideo" alt={altText} />
     )
 
     expect(queryByAltText(altText)).toBeInTheDocument()
