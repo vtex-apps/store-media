@@ -1,0 +1,84 @@
+{
+  "definitions": {
+    "Media": {
+      "title": "admin/editor.media.title",
+      "description": "admin/editor.media.description",
+      "properties": {
+        "mediaType": {
+          "title": "admin/editor.media.mediaType.title",
+          "type": "string",
+          "enum": ["image", "video"],
+          "enumNames": [
+            "admin/editor.media.mediaType.image",
+            "admin/editor.media.mediaType.video"
+          ]
+        }
+      },
+      "dependencies": {
+        "mediaType": {
+          "oneOf": [
+            {
+              "properties": {
+                "mediaType": {
+                  "enum": ["image"]
+                },
+                "src": {
+                  "$ref": "app:vtex.store-image#/definitions/Image/properties/src"
+                },
+                "link": {
+                  "$ref": "app:vtex.store-image#/definitions/Image/properties/link"
+                },
+                "alt": {
+                  "$ref": "app:vtex.store-image#/definitions/Image/properties/alt"
+                },
+                "title": {
+                  "$ref": "app:vtex.store-image#/definitions/Image/properties/title"
+                },
+                "analyticsProperties": {
+                  "$ref": "app:vtex.store-image#/definitions/Image/properties/analyticsProperties"
+                }
+              },
+              "dependencies": {
+                "$ref": "app:vtex.store-image#/definitions/Image/dependencies"
+              }
+            },
+            {
+              "properties": {
+                "mediaType": {
+                  "enum": ["video"]
+                },
+                "videoUrl": {
+                  "$ref": "app:vtex.store-video#/definitions/Video/properties/src"
+                },
+                "name": {
+                  "$ref": "app:vtex.store-video#/definitions/Video/properties/name"
+                },
+                "description": {
+                  "$ref": "app:vtex.store-video#/definitions/Video/properties/description"
+                },
+                "width": {
+                  "$ref": "app:vtex.store-video#/definitions/Video/properties/width"
+                },
+                "height": {
+                  "$ref": "app:vtex.store-video#/definitions/Video/properties/height"
+                },
+                "autoPlay": {
+                  "$ref": "app:vtex.store-video#/definitions/Video/properties/autoPlay"
+                },
+                "loop": {
+                  "$ref": "app:vtex.store-video#/definitions/Video/properties/loop"
+                },
+                "poster": {
+                  "$ref": "app:vtex.store-video#/definitions/Video/properties/poster"
+                },
+                "uploadDate": {
+                  "$ref": "app:vtex.store-video#/definitions/Video/properties/uploadDate"
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}
