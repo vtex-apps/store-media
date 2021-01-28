@@ -3,10 +3,10 @@ import type { ComponentType } from 'react'
 import { render } from '@vtex/test-tools/react'
 
 import Media from '../Media'
-import type { BlockModeProps, MediaProps } from '../MediaTypes'
+import type { MediaSchema, MediaProps } from '../MediaTypes'
 
 describe('Using media block via site-editor', () => {
-  const MediaSiteEditor = Media as ComponentType<MediaProps & BlockModeProps>
+  const MediaSiteEditor = Media as ComponentType<MediaProps & MediaSchema>
 
   it('should render a youtube player correctly', () => {
     const { queryByTestId } = render(
@@ -36,7 +36,7 @@ describe('Using media block via site-editor', () => {
 
   it('should render a HTML5 player correctly', () => {
     const { queryByTestId } = render(
-      <MediaSiteEditor mediaType="video" videoUrl="vtex.mp4" />
+      <MediaSiteEditor mediaType="video" videoUrl="http://vtex.com/vtex.mp4" />
     )
 
     expect(queryByTestId('html5-player')).toBeInTheDocument()
@@ -45,8 +45,8 @@ describe('Using media block via site-editor', () => {
   })
 
   it('should render a HTML5 player using videoUrl even if src is set', () => {
-    const videoUrl = 'vtex-video-url.mp4'
-    const src = 'vtex-src.mp4'
+    const videoUrl = 'http://vtex.com/vtex-video-url.mp4'
+    const src = 'http://vtex.com/vtex-src.mp4'
 
     const { queryByTestId } = render(
       <MediaSiteEditor mediaType="video" videoUrl={videoUrl} src={src} />
@@ -85,9 +85,9 @@ describe('Using media block via site-editor', () => {
     expect(queryByAltText(altText)).toHaveAttribute('src', 'vtex.png')
   })
 
-  it('should render an image even if imageUrl is malformed', () => {
+  it('should render an image even if src is malformed', () => {
     const altText = 'vtex-image'
-    const src = 'vtex.png'
+    const src = 'vtex'
 
     const { queryByAltText } = render(
       <MediaSiteEditor mediaType="image" src={src} alt={altText} />
@@ -123,7 +123,9 @@ describe('Using media with fixed mediaType', () => {
   })
 
   it('should render a HTML5 player correctly', () => {
-    const { queryByTestId } = render(<Media mediaType="video" src="vtex.mp4" />)
+    const { queryByTestId } = render(
+      <Media mediaType="video" src="http://vtex.com/vtex.mp4" />
+    )
 
     expect(queryByTestId('html5-player')).toBeInTheDocument()
     expect(queryByTestId('vimeo-player')).not.toBeInTheDocument()
@@ -141,7 +143,7 @@ describe('Using media with fixed mediaType', () => {
     expect(queryByTestId('youtube-player')).not.toBeInTheDocument()
   })
 
-  it('should render a nimage correctly', () => {
+  it('should render an image correctly', () => {
     const altText = 'vtex-image'
     const src = 'vtex.png'
 
