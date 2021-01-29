@@ -8,7 +8,6 @@
   "list-context.media-list": {
     "component": "MediaList",
     "composition": "children",
-    "allowed": "*",
     "content": {
       "$ref": "app:vtex.store-media#/definitions/MediaList"
     }
