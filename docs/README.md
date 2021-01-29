@@ -26,12 +26,12 @@ Now, you are able to use all blocks exported by the `store-media` app. Check out
 
 | Block name                | Description                                                                                                                                                                                                                                               |
 | ------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `media`                   | This block is capable to display a single image or video.                                                                                                                                                                                                 |
-| `list-context.media-list` | This block allows you to display a list of images and videos in your store with a higher degree of composability, since you can use it along with other `list-context` or `slider-layout` blocks to create a more flexible and customizable image slider. |
+| `media`                   | This block is capable of displaying a single image or video.                                                                                                                                                                                                 |
+| `list-context.media-list` | This block allows you to display a list of images and videos in your store with a higher degree of composability. You can use it along with other `list-context` or `slider-layout` blocks to create different sliders and layouts. |
 
 ### `media` block
 
-The `media` block inherits all props from `image` and `video` blocks. It's highly recommended for you to check out the docs for [Image](https://github.com/vtex-apps/store-image) and [Video](https://github.com/vtex-apps/store-video) blocks before using this block.
+The `media` block inherits all props from `image` and `video` blocks. It's highly recommended you check out the docs for [Image](https://github.com/vtex-apps/store-image) and [Video](https://github.com/vtex-apps/store-video) blocks before using this block.
 
 You can use props from both blocks, but `media` will only consider the props from the block (`image` or `video`) that matches the current `mediaType`, or, in the case of `mediaType` being `imageOrVideo`, that matches the type of the `src`.
 
@@ -54,7 +54,7 @@ Use the **admin's Site Editor** to manage some props declared in the `media` blo
 
 ### `list-context.media-list` block
 
-The `list-context.media-list` block acts just like the `list-context.image-list` and inherits a lot from `image` and `video` blocks, with a few key differences. It's highly recommended for you to check out the docs for [Image](https://github.com/vtex-apps/store-image) and [Video](https://github.com/vtex-apps/store-video) blocks before using this block.
+The `list-context.media-list` block acts just like the `list-context.image-list` block and inherits a lot from `image` and `video` blocks, with a few key differences. It's highly recommended you check out the docs for [Image](https://github.com/vtex-apps/store-image) and [Video](https://github.com/vtex-apps/store-video) blocks before using this block.
 
 `list-context.media-list` accepts both images and videos, so you can mix them inside a single carousel, for example. Images can receive `image` blocks' props and videos can receive `video` blocks' props. If you pass props that don't match the media type, they will be ignored.
 
@@ -65,7 +65,7 @@ The `list-context.media-list` block acts just like the `list-context.image-list`
 
 - `MediaListElement` object
 
-A `MediaListElement` object is almost equal to the props accepted by the `media` component, that is, you can specify the `mediaType` of the asset you're providing and pass the props for `image` and `video` blocks. Read the docs for the `media` block to better understand how that works.
+A `MediaListElement` object has a very similar shape to the props accepted by the `media` component, that is, you can specify the `mediaType` of the asset you want to display and pass the props for `image` and `video` blocks. Read the docs for the `media` block to better understand how that works.
 
 Differently from the `media` component, it does **not** use the `src` prop to receive the assets. For images, it uses the `image` and `mobileImage` props, and, for video, it uses the `video` and `mobileVideo` props.
 
@@ -117,7 +117,7 @@ Differently from the `media` component, it does **not** use the `src` prop to re
 
 In order to apply CSS customizations in this and other blocks, follow the instructions given in the recipe on [Using CSS Handles for store customization](https://vtex.io/docs/recipes/style/using-css-handles-for-store-customization).
 
-Just like they do with props, the all blocks from this app inherits all of `image` and `video` blocks' CSS Handles. You can find them in their respective docs.
+Just like they do with props, all blocks from this app inherits all of `image` and `video` blocks' CSS Handles. You can find them in their respective docs.
 
 Keep in mind that, for instance, applying CSS customizations to CSS Handles that came from `image` won't have any effect if the `mediaType` is set to `video` or if the `mediaType` is set to `imageOrVideo` and the `src` was identified as a video.
 
