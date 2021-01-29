@@ -7,10 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
-- `list-context.media-list` block that provides a list context of images and videos
+- `list-context.media-list` block that provides a list context of images and videos.
   
 ### Changed
-- Improved other apps' CSS Handles imports
+- Improved imports of CSS Handles from `vtex.store-video` and `vtex.store-image`.
 
 ## [0.1.0] - 2021-01-22
 ### Added
