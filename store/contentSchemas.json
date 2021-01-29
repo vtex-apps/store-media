@@ -1,6 +1,5 @@
 {
   "definitions": {
-    "videoDependency": {},
     "Media": {
       "title": "admin/editor.media.title",
       "description": "admin/editor.media.description",
