@@ -101,11 +101,7 @@ Differently from the `media` component, it does **not** use the `src` prop to re
 },
 "slider-layout#demo-media": {
   "props": {
-    "itemsPerPage": {
-      "desktop": 1,
-      "tablet": 1,
-      "phone": 1
-    },
+    "itemsPerPage": 1,
     "infinite": true,
     "showNavigationArrows": "desktopOnly",
     "blockClass": "carousel"
