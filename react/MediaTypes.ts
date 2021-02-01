@@ -47,5 +47,3 @@ export type MediaListSchemaElement =
   | VideoListSchemaElement
 
 export type MediaListWithSchema = MediaListSchemaElement[] | MediaProps[]
-
-export type MediaArray = MediaProps[]

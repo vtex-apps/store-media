@@ -5,14 +5,14 @@ import { ListContextProvider, useListContext } from 'vtex.list-context'
 import type { ImageTypes } from 'vtex.store-image'
 
 import { getMediaAsJSXList } from './modules/mediaAsList'
-import type { MediaArray } from './MediaTypes'
+import type { MediaProps } from './MediaTypes'
 
 export interface MediaListProps {
   /**
    * List of Media props that will be turned into a list of Media components
    * @default []
    */
-  mediaList?: MediaArray
+  mediaList?: MediaProps[]
 }
 
 export interface MediaListPropsWithHeight extends MediaListProps {

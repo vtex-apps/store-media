@@ -5,14 +5,13 @@ import type {
   ImageModeProps,
   VideoModeProps,
   ImageListSchemaElement,
-  MediaArray,
   VideoListSchemaElement,
   MediaListSchemaElement,
   MediaProps,
 } from '../MediaTypes'
 
 export const getMediaAsJSXList = (
-  mediaList: MediaArray,
+  mediaList: MediaProps[],
   isMobile: boolean,
   maxHeight?: string | number
 ) => {
