@@ -12,6 +12,7 @@
 
 The Media app allows you to display image and video assets using a single block.
 
+![media-list-example](https://user-images.githubusercontent.com/8127610/107076678-848fbf80-67ca-11eb-9ba3-8a7d285c4b2c.gif)
 ## Configuration
 
 1. Add the `store-media` app to your theme's dependencies in the `manifest.json` file:
