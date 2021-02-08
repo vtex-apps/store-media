@@ -4,29 +4,10 @@ import { Video } from 'vtex.store-video'
 import { useCssHandles, useCustomClasses } from 'vtex.css-handles'
 import type { CssHandlesTypes } from 'vtex.css-handles'
 
-import type {
-  BlockModeProps,
-  ImageModeProps,
-  MediaProps,
-  VideoModeProps,
-} from './MediaTypes'
+import type { VideoSchema, ImageModeProps, VideoModeProps } from './MediaTypes'
 
-const IMAGE_CSS_HANDLES = ['imageElement', 'imageElementLink'] as const
-const VIDEO_CSS_HANDLES = [
-  'videoContainer',
-  'videoElement',
-  'fallbackContainer',
-  'fallbackImage',
-  'controlsContainer',
-  'playButton',
-  'trackContainer',
-  'trackTimer',
-  'trackBar',
-  'fullscreenButton',
-  'volumeContainer',
-  'volumeSlider',
-  'volumeButton',
-] as const
+const IMAGE_CSS_HANDLES = Image.cssHandles
+const VIDEO_CSS_HANDLES = Video.cssHandles
 
 /*
  * The no-useless-escape rule is disabled on these expressions so they work correctly on the popular
@@ -61,7 +42,7 @@ function isVideoSrc(src?: string) {
 type GetMediaValuesParams = {
   rawSrc?: ImageModeProps['src'] | VideoModeProps['src']
   mediaType: 'image' | 'video' | 'imageOrVideo'
-  videoUrl?: BlockModeProps['videoUrl']
+  videoUrl?: VideoSchema['videoUrl']
 }
 
 function getMediaValues({ rawSrc, mediaType, videoUrl }: GetMediaValuesParams) {
@@ -84,6 +65,8 @@ function getModifiableHandles(handles: CssHandlesTypes.CssHandles<string[]>) {
 
   return modifiableHandles
 }
+
+export type MediaProps = ImageModeProps | VideoModeProps
 
 function Media(props: MediaProps) {
   const { src: rawSrc, mediaType = 'imageOrVideo', classes } = props
@@ -116,7 +99,7 @@ function Media(props: MediaProps) {
    * This prop is used by the schema to receive the source of the video.
    * Since image is using a the src prop, they don't conflict.
    */
-  const { videoUrl } = props as BlockModeProps
+  const { videoUrl } = props as VideoSchema
 
   const { isVideo, src } = getMediaValues({
     rawSrc,

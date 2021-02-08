@@ -1,23 +1,49 @@
-import { Image } from 'vtex.store-image'
-import type { ComponentProps } from 'react'
 import type { VideoTypes } from 'vtex.store-video'
+import type { ImageTypes } from 'vtex.store-image'
 
-export type ImageProps = ComponentProps<typeof Image>
+import type { MediaProps } from './Media'
+import type { MediaListProps, MediaListPropsWithHeight } from './MediaList'
+
+export { MediaProps, MediaListProps, MediaListPropsWithHeight }
 
 export interface VideoModeProps extends Omit<VideoTypes.VideoPlayer, 'src'> {
+  /**
+   * The type of the media to be displayed
+   * @default 'imageOrVideo'
+   */
   mediaType?: 'video' | 'imageOrVideo'
   src?: VideoTypes.VideoPlayer['src']
 }
 
-export interface ImageModeProps extends ImageProps {
+type ImageModeMediaType = {
+  /**
+   * The type of the media to be displayed
+   * @default 'imageOrVideo'
+   */
   mediaType?: 'image' | 'imageOrVideo'
 }
+
+export type ImageModeProps = ImageModeMediaType & ImageTypes.ImageProps
 
 // Media type will always be defined (image or video), but assuring that here
 // makes the prop autocomplete on this component way less powerful
 // on the test site-editor tests
-export interface BlockModeProps {
+export interface VideoSchema extends Omit<VideoModeProps, 'src'> {
   videoUrl?: VideoTypes.VideoPlayer['src']
 }
 
-export type MediaProps = ImageModeProps | VideoModeProps
+export type MediaSchema = ImageTypes.ImageProps | VideoSchema
+
+export type ImageListSchemaElement = Partial<ImageTypes.ImagesSchema[0]> &
+  ImageModeMediaType
+
+export type VideoListSchemaElement = Omit<VideoModeProps, 'src'> & {
+  video?: VideoModeProps['src']
+  mobileVideo?: VideoModeProps['src']
+}
+
+export type MediaListSchemaElement =
+  | ImageListSchemaElement
+  | VideoListSchemaElement
+
+export type MediaListWithSchema = MediaListSchemaElement[] | MediaProps[]

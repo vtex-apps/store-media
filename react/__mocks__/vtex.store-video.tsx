@@ -1,12 +1,12 @@
 import React from 'react'
 import { VideoTypes } from 'vtex.store-video'
 
-import { BlockModeProps } from '../MediaTypes'
+import { VideoSchema } from '../MediaTypes'
 
 const VIMEO_PATTERN = /vimeo/
 const YOUTUBE_PATTERN = /youtube|youtu.be/
 
-export function Video({ src = '' }: VideoTypes.VideoPlayer & BlockModeProps) {
+function Video({ src = '' }: VideoTypes.VideoPlayer & VideoSchema) {
   if (VIMEO_PATTERN.test(src)) {
     return <div data-testid="vimeo-player" />
   }
@@ -21,3 +21,7 @@ export function Video({ src = '' }: VideoTypes.VideoPlayer & BlockModeProps) {
     </div>
   )
 }
+
+Video.cssHandles = [] as string[]
+
+export { Video }
