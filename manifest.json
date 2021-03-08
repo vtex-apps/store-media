@@ -1,7 +1,7 @@
 {
   "vendor": "vtex",
   "name": "store-media",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "title": "Media",
   "description": "Store component to handle media (image and video)",
   "builders": {
