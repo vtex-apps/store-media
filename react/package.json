@@ -27,6 +27,6 @@
     "vtex.list-context": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.list-context@0.2.0/public/@types/vtex.list-context",
     "vtex.render-runtime": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.render-runtime@8.126.11/public/@types/vtex.render-runtime",
     "vtex.store-image": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.store-image@0.10.0/public/@types/vtex.store-image",
-    "vtex.store-video": "https://icarovtexvideo--muji.myvtex.com/_v/private/typings/linked/v1/vtex.store-video@1.3.0+build1614972004/public/@types/vtex.store-video"
+    "vtex.store-video": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.store-video@1.4.0/public/@types/vtex.store-video"
   }
 }
