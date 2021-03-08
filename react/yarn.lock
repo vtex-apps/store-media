@@ -4958,17 +4958,17 @@ verror@1.10.0:
   version "0.2.0"
   resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.list-context@0.2.0/public/@types/vtex.list-context#935b748d394851ced7f3b06bbedf59f4ee3ca8a6"
 
-"vtex.render-runtime@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.render-runtime@8.126.10/public/@types/vtex.render-runtime":
-  version "8.126.10"
-  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.render-runtime@8.126.10/public/@types/vtex.render-runtime#1eb37d8ef0fcaef17060306f6d5dff6d9e404d39"
+"vtex.render-runtime@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.render-runtime@8.126.11/public/@types/vtex.render-runtime":
+  version "8.126.11"
+  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.render-runtime@8.126.11/public/@types/vtex.render-runtime#aceb734766093b56954ec19a074574b4c2c95242"
 
-"vtex.store-image@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.store-image@0.9.0/public/@types/vtex.store-image":
-  version "0.9.0"
-  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.store-image@0.9.0/public/@types/vtex.store-image#56a0d07cd0fd2ee7f5413fbced139ef8a04664d0"
+"vtex.store-image@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.store-image@0.10.0/public/@types/vtex.store-image":
+  version "0.10.0"
+  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.store-image@0.10.0/public/@types/vtex.store-image#99963acaed144f87635ce6ed8b6a99230607e8f4"
 
-"vtex.store-video@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.store-video@1.3.0/public/@types/vtex.store-video":
-  version "1.3.0"
-  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.store-video@1.3.0/public/@types/vtex.store-video#2b6508047aec46207e1499463d35216ddb6ed944"
+"vtex.store-video@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.store-video@1.4.0/public/@types/vtex.store-video":
+  version "1.4.0"
+  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.store-video@1.4.0/public/@types/vtex.store-video#65e43f18ea9bfe382b5f0553a2e716e490900e82"
 
 w3c-hr-time@^1.0.1:
   version "1.0.2"

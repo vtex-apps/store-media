@@ -55,6 +55,9 @@
                 "loop": {
                   "$ref": "app:vtex.store-video#/definitions/Video/properties/loop"
                 },
+                "playsInline": {
+                  "$ref": "app:vtex.store-video#/definitions/Video/properties/playsInline"
+                },
                 "poster": {
                   "$ref": "app:vtex.store-video#/definitions/Video/properties/poster"
                 },
@@ -123,6 +126,9 @@
                       },
                       "loop": {
                         "$ref": "app:vtex.store-video#/definitions/Video/properties/loop"
+                      },
+                      "playsInline": {
+                        "$ref": "app:vtex.store-video#/definitions/Video/properties/playsInline"
                       },
                       "poster": {
                         "$ref": "app:vtex.store-video#/definitions/Video/properties/poster"
